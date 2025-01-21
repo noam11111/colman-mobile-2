@@ -22,6 +22,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".StudentDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".StudentsActivity"
             android:exported="true" />
 
