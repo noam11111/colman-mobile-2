@@ -11,11 +11,11 @@ class Model private constructor() {
     init {
         for (i in 0..20) {
             val student = Student(
-                name = "Name $i",
-                id = "Student ID: $i",
+                name = "noam$i",
+                id = "$i",
                 avatarUrl = "",
-                address = "Simtat Sahaf",
-                phoneNumber = "0525124",
+                address = "Maanit Maanit",
+                phoneNumber = "0532668951",
                 isChecked = false
             )
             students.add(student)

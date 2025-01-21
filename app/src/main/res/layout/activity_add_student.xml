@@ -109,6 +109,7 @@
         android:id="@+id/edit_student_checkbox"
         android:layout_width="44dp"
         android:layout_height="40dp"
+        android:buttonTint="#6FB9ED"
         android:ems="10"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
