@@ -2,7 +2,6 @@ package com.example.studentsapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,12 +10,12 @@ import android.widget.CheckBox
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.studentsapp.Model
-import com.example.studentsapp.Student
+
 
 interface OnItemClickListener {
     fun onItemClick(position: Int)
@@ -37,15 +36,18 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
             insets
         }
 
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setTitle("Students List")
+
         students = Model.shared.students
         val recyclerView: RecyclerView = findViewById(R.id.students_recycler_view)
         recyclerView.setHasFixedSize(true)
 
         val createStudentButton = findViewById<Button>(R.id.activity_students_recycler_view_add_student_button)
         createStudentButton.setOnClickListener {
-//            TODO: Link to create new student activity
-//            val intent = Intent(this, <create student activity>::class.java)
-//            startActivity(intent)
+            val intent = Intent(this, AddStudentActivity::class.java)
+            startActivity(intent)
         }
 
         val layoutManager = LinearLayoutManager(this)
