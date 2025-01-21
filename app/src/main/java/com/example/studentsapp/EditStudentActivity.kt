@@ -7,10 +7,9 @@ import android.widget.CheckBox
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.studentsapp.Model
-import com.example.studentsapp.Student
 
 class EditStudentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +21,10 @@ class EditStudentActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setTitle("Students Details")
 
         val studentId = intent.getIntExtra("studentId", 0)
         var currStudent : Student? = null
@@ -48,7 +51,7 @@ class EditStudentActivity : AppCompatActivity() {
         val deleteButton = findViewById<Button>(R.id.edit_student_delete_button)
 
         saveButton.setOnClickListener {
-            val student: Student = Student(nameText.text.toString(), idText.text.toString(), "", phoneText.text.toString(), addressText.text.toString(), checkbox.isChecked)
+            val student = Student(nameText.text.toString(), idText.text.toString(), "", phoneText.text.toString(), addressText.text.toString(), checkbox.isChecked)
             Model.shared.students[studentId] = student
             val intent = Intent(this, StudentDetailsActivity::class.java)
             intent.putExtra("studentId", studentId)

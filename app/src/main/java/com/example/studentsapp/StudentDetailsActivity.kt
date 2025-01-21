@@ -10,8 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.studentsapp.Model
-import com.example.studentsapp.Student
 
 class StudentDetailsActivity : AppCompatActivity() {
 
