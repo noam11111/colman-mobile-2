@@ -39,7 +39,7 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
 
         students = Model.shared.students
         val recyclerView: RecyclerView = findViewById(R.id.students_recycler_view)
-//        recyclerView.setHasFixedSize(true)
+        recyclerView.setHasFixedSize(true)
 
         val createStudentButton = findViewById<Button>(R.id.activity_students_recycler_view_add_student_button)
         createStudentButton.setOnClickListener {

@@ -9,7 +9,7 @@ class Model private constructor() {
     }
 
     init {
-        for (i in 0..3) {
+        for (i in 0..10) {
             val student = Student(
                 name = "noam$i",
                 id = "$i",
