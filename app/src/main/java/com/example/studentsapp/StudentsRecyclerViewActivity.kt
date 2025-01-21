@@ -43,9 +43,8 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
 
         val createStudentButton = findViewById<Button>(R.id.activity_students_recycler_view_add_student_button)
         createStudentButton.setOnClickListener {
-//            TODO: Link to create new student activity
-//            val intent = Intent(this, <create student activity>::class.java)
-//            startActivity(intent)
+            val intent = Intent(this, AddStudentActivity::class.java)
+            startActivity(intent)
         }
 
         val layoutManager = LinearLayoutManager(this)
