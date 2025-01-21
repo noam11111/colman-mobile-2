@@ -31,6 +31,10 @@
         <activity
             android:name=".AddStudentActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".EditStudentActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
