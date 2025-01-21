@@ -52,7 +52,18 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
 
         val adapter = StudentsRecyclerAdapter(students)
-        // TODO: add student info page
+
+        val intent = Intent(this, StudentDetailsActivity::class.java)
+        adapter.listener = object : OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                intent.putExtra("studentId", position)
+                startActivity(intent)
+            }
+
+            override fun onItemClick(student: Student?) {
+
+            }
+        }
         recyclerView.adapter = adapter
 
     }
