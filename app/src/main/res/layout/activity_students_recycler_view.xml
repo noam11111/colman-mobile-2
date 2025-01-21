@@ -7,15 +7,32 @@
     android:layout_height="match_parent"
     tools:context=".StudentsRecyclerViewActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/students_recycler_view"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#6fb9ed"
+            android:elevation="4dp"
+            android:titleTextColor="@android:color/white" />
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/students_recycler_view"
+                android:layout_width="347dp"
+                android:layout_height="729dp" />
+        </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
     <Button
         android:id="@+id/activity_students_recycler_view_add_student_button"

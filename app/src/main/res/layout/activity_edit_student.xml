@@ -7,15 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".EditStudentActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#6fb9ed"
+        android:elevation="4dp"
+        android:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/edit_student_image"
         android:layout_width="0dp"
         android:layout_height="180dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:srcCompat="@drawable/avatar"
-        tools:layout_editor_absoluteY="-3dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="-3dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -120,36 +131,39 @@
 
     <Button
         android:id="@+id/edit_student_cancel_button"
-        android:backgroundTint="#6FB9ED"
-        android:layout_width="120dp"
+        android:layout_width="95dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="664dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#6FB9ED"
         android:text="Cancel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/edit_student_delete_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/edit_student_delete_button"
-        android:layout_width="120dp"
-        android:backgroundTint="#6FB9ED"
+        android:layout_width="95dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="163dp"
-        android:layout_marginTop="667dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#6FB9ED"
         android:text="Delete"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/edit_student_save_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/edit_student_cancel_button" />
 
     <Button
         android:id="@+id/edit_student_save_button"
-        android:layout_width="wrap_content"
-        android:backgroundTint="#6FB9ED"
+        android:layout_width="95dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="307dp"
-        android:layout_marginTop="667dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#6FB9ED"
         android:text="Save"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/edit_student_delete_button" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

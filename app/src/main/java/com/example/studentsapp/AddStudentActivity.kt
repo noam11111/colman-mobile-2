@@ -7,6 +7,7 @@ import android.widget.CheckBox
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -20,6 +21,9 @@ class AddStudentActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setTitle("Students Details")
 
         val saveButton: Button = findViewById(R.id.add_student_activity_save_button)
         val cancelButton: Button = findViewById(R.id.add_student_activity_cancel_button)
@@ -39,7 +43,7 @@ class AddStudentActivity : AppCompatActivity() {
 
 
         saveButton.setOnClickListener {
-            val student: Student = Student(name.text.toString(), id.text.toString(), "", phone.text.toString(), address.text.toString(), checkbox.isChecked)
+            val student = Student(name.text.toString(), id.text.toString(), "", phone.text.toString(), address.text.toString(), checkbox.isChecked)
             Model.shared.students.add(student)
             val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
             startActivity(intent)
