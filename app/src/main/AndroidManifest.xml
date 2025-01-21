@@ -25,10 +25,6 @@
             android:name=".StudentDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".StudentsActivity"
-            android:exported="true" />
-
-        <activity
             android:name=".MainActivity"
             android:exported="true" />
     </application>
