@@ -1,5 +1,6 @@
 package com.example.studentsapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
@@ -36,13 +37,16 @@ class AddStudentActivity : AppCompatActivity() {
         checkbox.isChecked = false
 
         cancelButton.setOnClickListener {
-            finish()
+            val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
+            startActivity(intent)
         }
+
 
         saveButton.setOnClickListener {
             val student = Student(name.text.toString(), id.text.toString(), "", phone.text.toString(), address.text.toString(), checkbox.isChecked)
             Model.shared.students.add(student)
-            finish()
+            val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
+            startActivity(intent)
         }
     }
 }
